@@ -4,7 +4,9 @@ from django.db import models
 class Equipaments(models.Model):
 
 	name=models.CharField('Modelo', max_length=100)
+	mac=models.CharField('Mac', max_length=10)
 	bairro=models.CharField('Bairro', max_length=100)
+	rua=models.CharField('Rua', max_length=100)
 	numero=models.CharField('Nº', max_length=10)
 
 
