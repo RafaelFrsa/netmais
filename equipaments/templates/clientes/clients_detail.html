@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<div class="list-group">
+	<a href="#" class="list-group-item list-group-item-action active">
+		Dados
+	</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Caixa:</b>
+		{{ object.caixa }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>MAC:</b>
+		{{ object.name }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Bairro:</b>
+		{{ object.bairro }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Rua:</b>
+		{{ object.rua }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Número:</b>
+		{{ object.numero }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Plano</b>
+		{{ object.planos }}</a>
+	<a href="" class="list-group-item list-group-item-action"><b>Data:</b>
+		{{ object.date }}</a>		
+
+</div>
+
+<br>
+					
+	<a href="{% url 'clients_update' object.pk %}" class="btn btn-success">Atualizar</a>
+	<a href="{% url 'clients_delete' object.pk %}" class="btn btn-danger">Apagar</a>
+	<a href="{% url 'clients_create' %}" class="btn btn-primary">Novo</a>
+
+{% endblock %}

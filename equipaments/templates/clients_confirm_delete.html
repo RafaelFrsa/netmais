@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-
-{% block main %}
-<form method="post">{% csrf_token %}
-    <p>Você quer excluir"{{ object.name }} definitivamente"?</p>
- 	<button type="submit" class="btn btn-danger" >Apagar</button>
-</form>
-{% endblock %}

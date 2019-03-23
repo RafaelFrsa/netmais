@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block main %}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        
+   <div class="card">
+    <div class="card-header">
+      Equipamentos
+    </div>
+    <div class="card-body">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            {{ form.caixa|bootstrap }}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+
+          </div>
+          <div class="col-md-6 mb-3">
+            {{ form.name|bootstrap }}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            {{ form.bairro|bootstrap }}
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            {{ form.rua|bootstrap }}
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            {{ form.numero|bootstrap }}
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+        </div>
+         <div class="form-row">
+          <div class="col-md-2 mb-3">
+            {{ form.date|bootstrap }}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            {{ form.planos|bootstrap }}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Atualizar</button>
+      </form>
+
+    </div>
+  </div>    
+
+</div>
+</div>
+
+<br>
+
+{% endblock %}

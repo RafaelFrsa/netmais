@@ -9,3 +9,4 @@ class EquipamentsConfig(AppConfig):
     def ready(self):
     	Clients = self.get_model('Clients')
     	watson.register(Clients)
+

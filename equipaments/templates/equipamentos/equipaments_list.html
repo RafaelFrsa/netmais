@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="card">
+	<div class="card-header">
+		Listar
+	</div>
+	<div class="card-body">
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Cod</th>
+							<th scope="col">Caixa</th>
+							<th scope="col">Detalhar</th>			      
+							<th scope="col">Editar</th>
+							<th scope="col">Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for equipaments in object_list %}
+						<tr>
+							<th scope="row">{{ equipaments.id }}</th>
+							<td>{{ equipaments.name }}</td>
+							<td><a href="{% url 'equipaments_detail' equipaments.pk %}"><button type="submit" class="btn btn-primary" >Detalhar</button></a></td>
+							<td><a href="{% url 'equipaments_update' equipaments.pk %}"><button type="submit" class="btn btn-success" >Editar</button></a></td>
+							<td><a href="{% url 'equipaments_delete' equipaments.pk %}"><button type="submit" class="btn btn-danger" >Apagar</button></a></td>
+						</tr>
+						{% endfor %}
+					</table>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+	<a href="{% url 'equipaments_create' %}"><button type="submit" class="btn btn-primary" >Novo</button></a><br>
+	{% endblock %}
